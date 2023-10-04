@@ -31,7 +31,7 @@ Adonis.js comes with a command line interface (CLI) for scaffolding new projects
 ```
 $ npm i -g adonis-cli
 $ adonis new my-task_list
-$ cd adonis-task_list
+$ cd my-task_list
 $ npm i 
 $ npm run serve:dev
 ```
