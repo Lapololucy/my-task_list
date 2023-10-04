@@ -26,12 +26,12 @@ If you are new to ES6 or MVC frameworks that is okay. We'll take this one step a
  
 ![](https://s16.postimg.org/aaoetxi7p/install_cli.gif)
  
-Adonis.js comes with a command line interface (CLI) for scaffolding new projects. We're going to install the Adonis CLI, create a new project and install the projects with npm. If you do not have Node.js installed on your machine go do that. Node.js is a prerequisite for this tutorial.
+Adonis.js comes with a command line interface (CLI) for scaffolding new projects. We're going to install the Adonis CLI, create a new project and install the projects with npm. If you do not have Node.js installed on your machine go do that. Node.js is a prerequisite for this project.
  
 ```
 $ npm i -g adonis-cli
-$ adonis new adonis-task-list
-$ cd adonis-task-list
+$ adonis new my-task_list
+$ cd adonis-task_list
 $ npm i 
 $ npm run serve:dev
 ```
@@ -117,7 +117,7 @@ On the first line of welcome.njk we're making a call that this file extends a ma
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>Task List - Adonis.js</title>
+  <title>My Task List - Adonis.js</title>
 
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -182,7 +182,7 @@ Before we get any further we need to set up a database for storing tasks and use
 
 ```
 $ mysql -uroot -p
-> create database adonistasklist;
+> create database mytasklist;
 ```
 
 If you do not have MySQL configured on your machine or prefer to use another database such as Postgres or SQLite that is totally cool.
@@ -201,7 +201,7 @@ DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_USER=root
 DB_PASSWORD=XXXXXXX
-DB_DATABASE=adonistasklist
+DB_DATABASE=mytasklist
 ```
 
 Next up, install the [mysql npm package](https://github.com/mysqljs/mysql): `npm i --save mysql`
