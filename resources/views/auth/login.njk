@@ -1,0 +1,25 @@
+{% extends 'master' %}
+
+{% block content %}
+  <h1>Login</h1>
+
+    <form method="POST" action="/login">
+
+    	{{ csrfField }}
+
+
+    	<input type='email' placeholder='Email' name='email' class='input'>
+
+    	<input type='password' placeholder='Password' name='password' class='input'>
+
+    	{% if error %}
+    	<div class="notification is-danger">
+			{{ error }}
+		</div>
+		{% endif %}
+
+    	<input type='submit' value='Submit'>
+
+	</form>
+{% endblock %}
+

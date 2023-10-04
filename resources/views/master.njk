@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Task List - Adonis.js</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.css">
+  <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class='container'>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class='navbar-item' href='/'>Task Listr</a>
+      </div>
+      <div class='navbar-menu'>
+        <div class='navbar-start'>
+          <a class='navbar-item' href='/tasks'>Tasks</a>
+          
+          {% if currentUser %}
+            <a class='navbar-item' href='/tasks/create'>Create task</a>
+          {% endif %}
+        </div>
+        <div class='navbar-end'>
+          {% if not currentUser %}
+            <a class='navbar-item' href='/login'>Login</a>
+            <a class='navbar-item' href='/register'>Register</a>
+          {% else %}
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                {{ currentUser.username }}
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href='/logout'>
+                  Logout
+                </a>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+
+</body>
+</html>
